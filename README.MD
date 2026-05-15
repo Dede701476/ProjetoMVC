@@ -2,7 +2,7 @@
 
 mo terminal:
 ```bash
-pip instal -r requirements.txt
+pip install -r requirements.txt
 ```
 
 # inicializar o alembic
