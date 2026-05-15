@@ -9,6 +9,7 @@ from alembic import context
 from dotenv import load_dotenv
 import os
 from app.database import Base
+from app.models import usuarios
 
 
 load_dotenv()
@@ -18,7 +19,7 @@ load_dotenv()
 # access to the values within the .ini file in use.
 config = context.config
 
-config.set_main_option("sqlalchemy.url", os.getenv("DATABASE.URL"))
+config.set_main_option("sqlalchemy.url", os.getenv("DATABASE_URL"))
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
