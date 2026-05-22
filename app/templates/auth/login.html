@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Seduc</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f0f2f5;
+        }
+
+        .container{
+            background: white;
+            padding: 30px;
+            width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h1{
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input{
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            outline: none;
+        }
+
+        input:focus{
+            border-color: #4a90e2;
+        }
+
+        button{
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            background: #4a90e2;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background: #357abd;
+        }
+
+        p{
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        a{
+            text-decoration: none;
+            color: #4a90e2;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Login</h1>
+
+        {% if erro %}
+            <p style="color: red;">{{ erro }}</p>
+        {% endif %}
+
+        {% if request.query_params.get("cadastro") == "Sucesso"%}
+            <p style="color: green;">Cadastro realizado com sucesso! Faça login.</p>
+        {% endif %}
+
+        <form action="/auth/login" method="post">  
+
+            <input type="email" name="email" placeholder="Email" required>
+
+            <input type="password" name="senha" placeholder="Senha" required>
+
+            <button type="submit">Entrar</button>
+
+
+        </form>
+
+        <p>Não tem conta? <a href="/auth/cadastro">Cadastrar</a></p>
+
+    </div>
+
+</body>
+</html>

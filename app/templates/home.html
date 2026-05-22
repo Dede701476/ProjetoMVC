@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Projeto MVC</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans flex flex-col min-h-screen">
+
+    <nav class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <i data-lucide="layers" class="text-blue-600 w-6 h-6"></i>
+                    <span class="font-bold text-xl tracking-tight text-gray-900">Projeto<span class="text-blue-600">MVC</span></span>
+                </div>
+                
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="#" class="text-blue-600 font-medium">Home</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-900 transition">Dashboard</a>
+                    <a href="#" class="text-gray-500 hover:text-gray-900 transition">Configurações</a>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <span class="text-sm text-gray-500 hidden sm:inline">Olá, {{ usuario.nome }}</span>
+                    <a href="/auth/logout" class="flex items-center gap-1 text-sm font-medium text-red-600 hover:text-red-700 transition bg-red-50 px-3 py-1.5 rounded-lg border border-red-100">
+                        <i data-lucide="log-out" class="w-4 h-4"></i>
+                        Sair
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <div class="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-2xl p-8 md:p-12 shadow-lg text-white mb-12">
+            <div class="max-w-2xl">
+                <h1 class="text-3xl md:text-4xl font-extrabold mb-4">Bem-vindo ao seu painel!</h1>
+                <p class="text-blue-100 text-lg mb-6">
+                    O seu login foi efetuado com sucesso e o token JWT foi validado. Agora você tem acesso a todas as ferramentas do sistema.
+                </p>
+                <button class="bg-white text-blue-600 font-semibold px-6 py-3 rounded-xl shadow hover:bg-blue-50 transition flex items-center gap-2">
+                    Começar agora
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <div class="bg-white p-6 rounded-xl shadow-xs border border-gray-200 hover:shadow-md transition">
+                <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 mb-4">
+                    <i data-lucide="user"></i>
+                </div>
+                <h3 class="font-bold text-lg text-gray-900 mb-2">Meu Perfil</h3>
+                <p class="text-gray-600 text-sm mb-4">Gerencie suas informações cadastrais, altere sua senha de acesso e atualize seus dados.</p>
+                <a href="#" class="text-blue-600 text-sm font-semibold hover:underline inline-flex items-center gap-1">
+                    Acessar perfil <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-xs border border-gray-200 hover:shadow-md transition">
+                <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center text-green-600 mb-4">
+                    <i data-lucide="bar-chart-3"></i>
+                </div>
+                <h3 class="font-bold text-lg text-gray-900 mb-2">Relatórios</h3>
+                <p class="text-gray-600 text-sm mb-4">Visualise gráficos estatísticos, métricas de desempenho e exporte relatórios em PDF/Excel.</p>
+                <a href="#" class="text-green-600 text-sm font-semibold hover:underline inline-flex items-center gap-1">
+                    Ver relatórios <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <div class="bg-white p-6 rounded-xl shadow-xs border border-gray-200 hover:shadow-md transition">
+                <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600 mb-4">
+                    <i data-lucide="shield-check"></i>
+                </div>
+                <h3 class="font-bold text-lg text-gray-900 mb-2">Segurança</h3>
+                <p class="text-gray-600 text-sm mb-4">Verifique as permissões da sua conta, sessões ativas e histórico de logins recentes.</p>
+                <a href="#" class="text-purple-600 text-sm font-semibold hover:underline inline-flex items-center gap-1">
+                    Configurar <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 py-6 text-center text-sm text-gray-500">
+        <p>&copy; 2026 Projeto MVC. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
