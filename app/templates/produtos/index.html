@@ -1,3 +1,5 @@
+estoque
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -65,7 +67,7 @@
                 <td><a href="/produtos/{{ p.id }}">{{ p.nome }}</a></td>
                 <td>{{ p.categoria.nome if p.categoria else "—" }}</td>
                 <td>R$ {{ "%.2f"|format(p.preco) }}</td>
-                <td>{{ p.estoque_atual }}</td>
+                <td>{{ p.estoque }}</td>
                 <td>
                     {% if usuario.role == 'admin' %}
                         <a href="/produtos/{{ p.id }}/editar">Editar</a>

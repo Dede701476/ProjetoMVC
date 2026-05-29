@@ -22,8 +22,8 @@
     <table border="1" cellpadding="8">
         <tr><td><strong>Preço</strong></td>
             <td>R$ {{ "%.2f"|format(produto.preco) }}</td></tr>
-        <tr><td><strong>Estoque atual</strong></td>
-            <td>{{ produto.estoque_atual }}</td></tr>
+        <tr><td><strong>Estoque</strong></td>
+            <td>{{ produto.estoque }}</td></tr>
     </table>
 
     {% if request.query_params.get('movimentacao') == 'ok' %}

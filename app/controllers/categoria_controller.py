@@ -1,3 +1,4 @@
+
 # controllers/categoria_controller.py — CRUD de categorias
 
 # Categorias são gerenciadas apenas por admins.
